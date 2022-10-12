@@ -3,7 +3,9 @@ import React from 'react'
 
 const HomeHeader = () => {
   return (
-    <View>
+    <View
+    style
+    >
       <Text>HomeHeader</Text>
     </View>
   )

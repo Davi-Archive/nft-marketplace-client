@@ -3,8 +3,7 @@ import React from "react";
 
 import { COLORS, SIZES, FONTS, SHADOWS } from "../constants";
 
-export const CircleButton = ({ props, imgUrl }) => {
-  const handlePress = () => {};
+export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
   return (
     <TouchableOpacity
       style={{
@@ -29,10 +28,28 @@ export const CircleButton = ({ props, imgUrl }) => {
   );
 };
 
-export const RectButton = () => {
+export const RectButton = ({ minWidth, fontSize, handlePress, ...props }) => {
   return (
-    <View>
-      <Text>RectButton</Text>
-    </View>
+    <TouchableOpacity
+      style={{
+        backgroundColor: COLORS.primary,
+        borderRadius: SIZES.extraLarge,
+        minWidth: minWidth,
+        padding: SIZES.small,
+        ...props,
+      }}
+      onPress={handlePress}
+    >
+      <Text
+        style={{
+          fontFamily: FONTS.semiBold,
+          fontSize: fontSize,
+          color: COLORS.white,
+          textAlign: "center",
+        }}
+      >
+        Place a bid
+      </Text>
+    </TouchableOpacity>
   );
 };
