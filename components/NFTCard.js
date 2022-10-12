@@ -31,6 +31,27 @@ const NFTCard = ({ data }) => {
       </View>
       <CircleButton imgUrl={assets.heart} right={10} top={10} />
       <SubInfo />
+
+      <View style={{ width: "100%", padding: SIZES.font }}>
+        <NFTTitle
+          title={data.name}
+          subTitle={data.creator}
+          titleSize={SIZES.large}
+          subTitleSize={SIZES.small}
+        />
+
+        <View
+          style={{
+            marginTop: SIZES.font,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <EthPrice price={data.price}/>
+          <RectButton />
+        </View>
+      </View>
     </View>
   );
 };
